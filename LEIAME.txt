@@ -1,0 +1,95 @@
+Opções para busca do Publish or Perish # crossref | gsauthor | gscholar | gsciting | gsprofile | masv2 | pubmed | scopus | wos
+Formatos de arquivo para exportar os resultatos de busca do Publish or Perish # .csv | .json | .rtf | .tsv
+
+# Ordem de execução dos arquivos:
+
+    1. coleta_pop.py e coleta_wos.py
+    2. parser_xml.py
+    3. json_dataframe.py e parser_xml.py
+    4. uniao.py
+    5. metricas
+
+
+# Estrutura das pastas
+~~~~
+./
+├── coleta_pop.py--------------------------------------------- Executa os comandos para as buscas no Publish or Perish (CLI).
+├── coleta_wos.py--------------------------------------------- Executa buscas e baixa automaticamente os resultados da plataforma WoS.
+├── df_das_metricas.py---------------------------------------- Executa os calculos das métricas com os dados do arquivo "df_consolidado.csv" em "dados/dados_consolidados/".
+├── json_dataframe.py----------------------------------------- Lê e une os dados dos arquivos JSON das buscas no Publish or Perish salvos no diretório "dados/json_pop".
+├── LEIAME.txt------------------------------------------------ Este arquivo.
+├── logs/----------------------------------------------------- Registros de execução.
+├── parser_xml.py--------------------------------------------- Extraí os XML dos arquivos ZIP , interpreta os dados e une os dados de artigos em um DataFrame Pandas.
+├── uniao.py-------------------------------------------------- Une os DataFrames salvos em "dados/df_coletas"
+│
+├── dados/
+│   ├── listaID.xlsx ----------------------------------------- Lista de nomes e Identidicadores dos pesquisadores. Deve ser fornecidas pelo usuário.
+│   ├── df_metricas.csv -------------------------------------- Arquivo com os resultados calculados pelo programa "metricas.py"                  
+│   ├── dados_consolidados/
+│   │   └── df_consolidado.csv ------------------------------- Arquivo com os resultados calculados pelo programa "união.py". DataFrame resultado da união dos dados das bases bibliográficas.
+│   │
+│   ├── df_coletas/
+│   │   ├── df_lattes.csv ------------------------------------ Arquivo com os resultados do "parser_xml.py". 
+│   │   ├── df_msacd.csv ------------------------------------- Arquivo com os resultados do "coleta_pop.py".
+│   │   ├── df_scholar.csv ----------------------------------- Arquivo com os resultados do "coleta_pop.py".
+│   │   ├── df_scopus.csv ------------------------------------ Arquivo com os resultados do "coleta_pop.py".
+│   │   └── df_wos.csv --------------------------------------- Arquivo com os resultados do "coleta_wos.py".
+│   │
+│   ├── json_pop/--------------------------------------------- Diretório dos arquivos JSON com os resultados da buscas.
+│   │   ├── gsprofile_Fulano_da_Silva_2021_09_09.json -------- Exemplo de arquivo com os dados de busca do Publish or Perish.
+│   │   ├── ...
+│   │   └── gsprofile_Sicrano_de_ Oliveira_2021_09_09.json
+│   │
+│   └── xml_zip/---------------------------------------------- Diretório dos arquivos ZIP baixados dos currículos Lattes.
+│       ├── 0029803620389112.zip ----------------------------- Exemplo de arquivo baixado de curriculo Lattes.
+│       ├── 0284791309350193.zip
+│       ├── 0349145205842430.zip
+│       ├── ...
+│	    └── temp/--------------------------------------------- Diretório temporário para salvar o XML antes de ser lido e deletado. 
+│
+└── pop_cli/-------------------------------------------------- Diretório dos arquivos do Publish or Perish (CLI).
+    ├── pop7error.exe
+    ├── pop7metrics.exe
+    └── pop7query.exe
+~~~~
+
+
+# Bibliotecas
+
+O Python 3.9.5 foi utilizado para o desenvolvimento e aplicação dos códigos.
+Abaixo segue as bibliotecas utilizadas e suas versões.
+As bibliotecas "os", "json", "codecs", "Collections" e "re" são nativas do Python.
+
+ - pandas==1.3.4
+ - recordlinkage==0.14
+ - selenium==3.141.0
+ - numpy==1.20.3
+ - glob2==0.7
+ - et-xmlfile==1.1.0
+ - Unidecode==1.1.1
+ - lxml==4.6.3
+
+As bibliotecas "os", "json", "codecs", "Collections" e "re" são nativas do Python.
+Os drivers do Selenium funciona com versões especificas dos navegadores. Recomendo usar versão "Portable" do navegador afim de evitar transtornos com atualizações.
+dados\Lista_IDS.csv
+
+# Publish or Perish
+
+    Opções para busca do Publish or Perish:
+
+        - Plataformas de dados bibliométricos:
+            - crossref 
+            - gsauthor 
+            - gscholar
+            - gsciting
+            - gsprofile
+            - masv2 
+            - pubmed
+            - scopus
+            - wos
+
+        - Formatos de arquivo para salvar resultados:
+            - csv
+            - json
+            - rtf
+            - tsv
