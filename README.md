@@ -1,6 +1,5 @@
 # Integração e análise de dados bibliométricos dos artigos científicos do IF-USP
-Trabalho de Formatura do Curso de Bacharelado em Matemática Computacional aplicada
-Código desenvolvido e utilizado na pesquisa do Trabalho de Conclusão do BMAC do IME-USP
+Trabalho de Formatura do Curso de Bacharelado em Matemática Aplicada e Computacional do IME-USP
 
 ## Resumo
 
