@@ -1,7 +1,9 @@
-# tcc_files
+# Integração e análise de dados bibliométricos dos artigos científicos do IF-USP
+Trabalho de Formatura do Curso de Bacharelado em Matemática Computacional aplicada
 Código desenvolvido e utilizado na pesquisa do Trabalho de Conclusão do BMAC do IME-USP
 
-__Resumo__
+## Resumo
+
 A análise de dados bibliográficos de produções intelectuais constitui um importante
 instrumento de avaliação acadêmica. A plataforma Lattes, principal fonte de informações de
 produções acadêmicas no Brasil, impõe restrições à coleta de dados e não dispõe de dados
@@ -24,4 +26,6 @@ que propõem normalizar os efeitos de artigos múltiplos com autores no cálculo
 O melhor resultado foi obtido pelo Índice hf rac.
 Palavras-chave: Dados bibliográficos, Record Linkage, índice h.
 
-Link para aplicação implementada: [https://ciab-dkc3sigowq-wn.a.run.app/]
+### Link para aplicação implementada (texto completo do TCC em "Sobre")
+[https://ciab-dkc3sigowq-wn.a.run.app/]
+
